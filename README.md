@@ -1,4 +1,4 @@
-# Pixi Unleased
+# Pixi Unleashed
 
 This is a replica of the `Elixir-SCO-spatial-omics` repository, but with the addition of a `Pixi` environment for all practicals except practical 5, which is R-based.
 The `Pixi` environment is designed to facilitate the execution of Python-based practicals, without the need for switching `Docker` images, which also decreases redundancy of repeating packages = Lightweight & reproducible
