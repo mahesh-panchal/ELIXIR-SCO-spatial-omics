@@ -1,3 +1,4 @@
+# Quarto
 /.quarto/
 .Rproj.user
 *_cache/
@@ -5,16 +6,16 @@
 _site/
 about.qmd
 
-day_1/practical_1/data/*/
-day_1/practical_1/data/*.zip
-day_2/practical_3/data/*/
-day_2/practical_3/data/*.zip
+# Course material
+**/data/*
+!**/data/fetch_data.sh
+!**/data/README.md
 .ipynb_checkpoints/
 
-# Pixi specific
+# Pixi
 .pixi/
 
-# macOS specific
+# MacOS
 .DS_Store
 .AppleDouble
 .LSOverride
