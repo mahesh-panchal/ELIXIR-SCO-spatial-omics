@@ -6,6 +6,9 @@
 _site/
 about.qmd
 
+# Python
+__pycache__/
+
 # Course material
 **/data/*
 !**/data/fetch_data.sh
