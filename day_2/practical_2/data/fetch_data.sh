@@ -2,12 +2,12 @@
 
 set -euo pipefail
 
-VIZ_DATA="V1_Adult_Mouse_Brain_data"
-if [ -d "$VIZ_DATA" ]; then
-    echo "${VIZ_DATA}: Data directory already exists. Skipping download."
+VISIUM_DATA="V1_Adult_Mouse_Brain_data"
+if [ -d "$VISIUM_DATA" ]; then
+    echo "${VISIUM_DATA}: Data directory already exists. Skipping download."
 else
     echo "Downloading V1_Adult_Mouse_Brain data."
-    mkdir -p "$VIZ_DATA"
+    mkdir -p "$VISIUM_DATA"
     BASE_URL="https://cf.10xgenomics.com/samples/spatial-exp/1.1.0/V1_Adult_Mouse_Brain"
 
     FILES=(
@@ -22,11 +22,13 @@ else
     )
 
     for file in "${FILES[@]}"; do
-        wget -nc -O "$VIZ_DATA/$file" "$BASE_URL/$file"
+        wget -nc -O "$VISIUM_DATA/$file" "$BASE_URL/$file"
     done
     echo "Data download complete."
 
-    echo "Extracting downloaded data..."
-    tar -xvzf "$VIZ_DATA/V1_Adult_Mouse_Brain_spatial.tar.gz" -C "$VIZ_DATA"
+    echo "Extracting tarballs..."
+    for tar in "$VISIUM_DATA"/*.tar.gz; do
+        tar xvzf "$tar" -C "$VISIUM_DATA"
+    done
     echo "Extraction complete."
 fi
