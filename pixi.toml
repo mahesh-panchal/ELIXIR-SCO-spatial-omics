@@ -12,7 +12,7 @@ fetch-spatialhd-data = { cmd = "./fetch_data.sh", cwd = "data/SpatialHD_Mouse_Sm
 fetch-visium-data = { cmd = "./fetch_data.sh", cwd = "data/Visium_Mouse_Brain_Coronal" }
 fetch-xeniumis-data = { cmd = "./fetch_data.sh", cwd = "data/XeniumIS_Mouse_Brain_TgCRND8" }
 fetch-all-data = { depends-on = ["fetch-merfish-data", "fetch-spatialgep-data", "fetch-spatialhd-data", "fetch-visium-data", "fetch-xeniumis-data"] }
-clean-all-data = "git clean -fdX"
+clean-all-data = "git clean -fdX data/"
 
 [dependencies]
 wget = "*"
@@ -39,7 +39,7 @@ jupyterlab = ">=4.4.7"
 notebook = ">=7.4.5"
 ipykernel = ">=6.30.1,<7"
 ipywidgets = ">=8.1.7"
-marimo = ">=0.15.2"
+ruff = ">=0.13.1"
 
 h5py = ">=3.14.0"
 zarr = ">=2.18.7"
@@ -94,6 +94,8 @@ scip = ">=9.2.3,<10"
 sphinx = ">=8.3.0,<9"
 
 [feature.python-practical.pypi-dependencies]
+marimo = ">=0.16.0"
+
 jax = ">=0.6.2"
 jaxlib = ">=0.6.2"
 flax = ">=0.10.2"
