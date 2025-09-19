@@ -9,6 +9,9 @@ about.qmd
 # Python
 __pycache__/
 
+# Marimo
+__marimo__
+
 # Course material
 /data/*/*
 !/data/*/fetch_data.sh
