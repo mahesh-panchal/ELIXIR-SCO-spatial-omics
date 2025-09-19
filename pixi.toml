@@ -6,10 +6,12 @@ platforms = ["osx-arm64", "linux-64"]
 version = "1.0"
 
 [tasks]
-fetch-practical0-data = { cmd = "./fetch_data.sh", cwd = "day_1/practical_0/data" }
-fetch-practical1-data = { cmd = "./fetch_data.sh", cwd = "day_1/practical_1/data" }
-fetch-practical2-data = { cmd = "./fetch_data.sh", cwd = "day_2/practical_2/data" }
-fetch-practical3-data = { cmd = "./fetch_data.sh", cwd = "day_2/practical_3/data" }
+fetch-merfish-data = { cmd = "./fetch_data.sh", cwd = "data/MERFISH_Mouse_Brain_ABCA" }
+fetch-spatialgep-data = { cmd = "./fetch_data.sh", cwd = "data/SpatialGEP_Human_Glioblastoma" }
+fetch-spatialhd-data = { cmd = "./fetch_data.sh", cwd = "data/SpatialHD_Mouse_Small_Intestine" }
+fetch-visium-data = { cmd = "./fetch_data.sh", cwd = "data/Visium_Mouse_Brain_Coronal" }
+fetch-xeniumis-data = { cmd = "./fetch_data.sh", cwd = "data/XeniumIS_Mouse_Brain_TgCRND8" }
+fetch-all-data = { depends-on = ["fetch-merfish-data", "fetch-spatialgep-data", "fetch-spatialhd-data", "fetch-visium-data", "fetch-xeniumis-data"] }
 clean-all-data = "git clean -fdX"
 
 [dependencies]
