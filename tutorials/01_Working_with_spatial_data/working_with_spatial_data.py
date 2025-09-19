@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.15.2"
+__generated_with = "0.16.0"
 app = marimo.App(width="medium")
 
 
@@ -20,9 +20,9 @@ def _(mo):
 
     ### Quiz: Pre-Workshop Check
 
-    1. What is a `SpatialData` object?  
+    1. What is a `SpatialData` object?
 
-    2. Which file formats are commonly used for spatial transcriptomics?  
+    2. Which file formats are commonly used for spatial transcriptomics?
 
     3. What are the main advantages of using `SpatialData` objects over plain tables or data frames?
 
@@ -168,7 +168,7 @@ def _(mo):
     mo.md(
         r"""
     <div style="border: 1px solid #ffa6a6; padding: 10px; border-radius: 5px;">
-    <span style="color: #ff6666; font-size: 20px;"><b>Quiz:</b></span> <span style="font-size: 20px;">Understanding Data Format</span>  
+    <span style="color: #ff6666; font-size: 20px;"><b>Quiz:</b></span> <span style="font-size: 20px;">Understanding Data Format</span>
     <ul>
         <li>What data components enable the assembly of <b>spatial_visium</b> objects?</li>
         <li>Can you guess the component that belongs to each description?</li>
@@ -246,7 +246,7 @@ def _(mo):
 
 @app.cell
 def _(visium):
-    sdata_visium = visium("day_1/practical_0/data/visium_2.1.0_2_io_subset")
+    sdata_visium = visium("data/SpatialGEP_Human_Glioblastoma/")
     return (sdata_visium,)
 
 
@@ -547,12 +547,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    # dense_matrix = sparse_matrix.toarray()  # Converts to a NumPy array
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(
@@ -576,12 +570,6 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    # obs_df = adata.obs  # Extract metadata for cells/spots
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(
@@ -596,12 +584,6 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""Dense data operations and algorithms that don’t support sparse matrices directly often require converting the sparse `.X` matrix to a `NumPy` array.""")
-    return
-
-
-@app.cell
-def _():
-    # dense_array = adata.X.toarray() if scipy.sparse.issparse(adata.X) else adata.X
     return
 
 
@@ -665,35 +647,9 @@ def _(mo):
     return
 
 
-@app.cell
-def _():
-    # # Subsetting Data: Extract a portion of the data based on metadata or other filters
-    # adata_subset = adata[adata.obs["condition"] == "treated"]
-    return
-
-
-@app.cell
-def _():
-    # Convert sparse .X to dense before using tools like PCA that require dense input.
-    return
-
-
-@app.cell
-def _():
-    # # Convert AnnData to a DataFrame for use with general-purpose libraries
-    # df = pd.DataFrame(adata.X.toarray(), index=adata.obs_names, columns=adata.var_names)
-    return
-
-
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""## The `xarray.DataArray` class (*images* and *labels*)""")
-    return
-
-
-@app.cell
-def _(sdata_visium):
-    sdata_visium
     return
 
 
@@ -724,12 +680,6 @@ def _(sdata_visium):
 @app.cell
 def _(sdata_visium):
     help(sdata_visium.pl.render_images)
-    return
-
-
-@app.cell
-def _():
-    # sdata_visium.pl.render_images().pl.show()
     return
 
 
@@ -782,19 +732,6 @@ def _(sdata_visium_hd):
     sdata_visium_hd.pl.render_images().pl.show(
         "Visium_HD_Mouse_Small_Intestine_downscaled_hires"
     )
-    return
-
-
-@app.cell
-def _():
-    # # Access the specific AnnData table
-    # adata_table3 = sdata_visium_hd.tables["square_008um"]  # Replace "table_name" with the actual table name
-
-    # # Make variable names unique
-    # adata_table3.var_names_make_unique()
-
-    # # Reassign the updated table back to the SpatialData object (optional if you need to reuse it)
-    # sdata_visium_hd.tables["square_008um"] = adata_table3
     return
 
 
@@ -898,7 +835,7 @@ def _(mo):
     mo.md(
         r"""
     <div style="border: 1px solid #ffa6a6; padding: 10px; border-radius: 5px;">
-    <span style="color: #ff6666; font-size: 20px;"><b>Reflection Point:</b></span> <span style="font-size: 20px;">Why Utilize GeoPandas?</span>  
+    <span style="color: #ff6666; font-size: 20px;"><b>Reflection Point:</b></span> <span style="font-size: 20px;">Why Utilize GeoPandas?</span>
     <ul>
         <li>How does GeoPandas enhance spatial data analysis?</li>
         <li>What advantages does it offer in handling geospatial data compared to standard pandas?</li>
