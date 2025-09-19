@@ -10,9 +10,11 @@ about.qmd
 __pycache__/
 
 # Course material
-**/data/*
-!**/data/fetch_data.sh
-!**/data/README.md
+/data/*/*
+!/data/*/fetch_data.sh
+*/**/data/*
+!*/**/data/fetch_data.sh
+!*/**/data/README.md
 .ipynb_checkpoints/
 
 # Pixi
