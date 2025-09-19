@@ -1,22 +1,42 @@
-# Pixi Unleashed
+# Elixir Single Cell and Spatial Omics workshop materials
 
-This is a replica of the `Elixir-SCO-spatial-omics` repository, but with the addition of a `Pixi` environment for all practicals except practical 5, which is R-based.
-The `Pixi` environment is designed to facilitate the execution of Python-based practicals, without the need for switching `Docker` images, which also decreases redundancy of repeating packages = Lightweight & reproducible
+This repository contains modules and code to learn how to analyze spatially
+resolved transcriptomics data.
 
-The environment also natively supports macOS ARM architecture, making it suitable for users with Apple Silicon devices.
+## Compute and Software Requirements
 
-## Usage
+This workshop uses [Pixi](https://pixi.sh/latest/) for reproducible dependency management.
+Please install Pixi following the instructions on their website.
+See the `pixi.toml` in the root of this repository for the list of dependencies used in this workshop.
 
-To use the `Pixi` environment, follow these steps:
-1. Make sure Pixi is installed on your system. You can find installation instructions [here](https://pixi.bio/docs/installation).
-2. Clone this repository to your local machine.
-3. Navigate to the main directory of the repo .
-4. Run the `Jupyter Lab` command to start the Jupyter Lab environment with the `Pixi` environment activated.
-5. Open the notebook for the practical you want to work on and that's it!
-6. For practical 5, which is R-based, ensure you have the appropriate R environment set up as per the original repository instructions (Docker)
+Python exercises are run in interactive Marimo notebooks, and R exercises are run in Quarto notebooks.
 
-```bash
-git clone https://github.com/addityea/ELIXIR-SCO-spatial-omics.git
-cd ELIXIR-SCO-spatial-omics
-pixi run jupyter-lab
-```
+The environment can also be run within a docker container available under packages on this repository.
+
+### Supported Platforms
+
+- Linux
+- MacOS
+- Windows Subsystem for Linux (WSL2)
+
+### Hardware Requirements
+
+- Minimum 64GB RAM
+- Minimum 8 CPU cores
+- Minimum 50GB free disk space
+
+## Learning Objectives
+
+1. **Handling spatial data:**
+2. **Quality control and filtering of spatial data:**
+3. **Normalization and integration of spatial data:**
+4. **Dimensionality reduction and clustering of spatial data:**
+5. **Visualization of spatial data:**
+6. **Cell type annotation in spatial data:**
+7. **Spatially variable gene identification:**
+8. **Cell-cell interaction analysis in spatial data:**
+
+## Repository Structure
+
+- `data`: Contains scripts to fetch data used in the workshop.
+- `modules`: Contains the workshop modules in Jupyter and Quarto formats.
