@@ -39,4 +39,4 @@ The environment can also be run within a docker container available under packag
 ## Repository Structure
 
 - `data`: Contains scripts to fetch data used in the workshop.
-- `modules`: Contains the workshop modules in Jupyter and Quarto formats.
+- `tutorials`: Contains the workshop tutorials in Marimo notebook (python) and Quarto notebook (R) formats.
