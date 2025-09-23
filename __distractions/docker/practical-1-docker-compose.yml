@@ -1,0 +1,11 @@
+services:
+  jupyter:
+    image: 'sibswiss/elixir-sco-spatial-omics:practical_1'
+#    image: 'saditya88/elixir-sco-spatial-omics:practical_1'
+    ports:
+      - 8888:8888
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    volumes:
+      - $PWD:/home/jovyan/workdir
+    working_dir: /home/jovyan/workdir
